@@ -1,0 +1,27 @@
+{
+  "name": "soundball",
+  "version": "1.0.0",
+  "description": "A game with sound and motion",
+  "main": "index.js",
+  "browserslist": [
+    "last 10 Firefox versions"
+  ],
+  "scripts": {
+    "start": "parcel code/index.html",
+    "build": "parcel build --public-url \"./\" code/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webaudio",
+    "game",
+    "sound"
+  ],
+  "author": "Jaro Habiger <jarohabiger@googlemail.com>",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.2"
+  }
+}
