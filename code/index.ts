@@ -1,5 +1,5 @@
 import sounds from "../sounds/*.ogg"
-import {sleep} from "./util";
+import {registerDeviceMotionEvent, sleep} from "./util";
 
 const audioCtx = new AudioContext();
 
@@ -34,7 +34,7 @@ class PreloadedSoundPlayer {
 
     }
 
-    start(time?: number, options: {gain?: number, x?:number, y?:number, z?:number} = {}) {
+    start(time?: number, options: { gain?: number, x?: number, y?: number, z?: number } = {}) {
         const {gain = 1.0, x = 0, y = 0, z = 0} = options;
         this.panner.positionX.value = x;
         this.panner.positionY.value = y;
@@ -53,7 +53,7 @@ function initializeMotionSensing(callback: (is_right: boolean, strength: number)
     let triggered = false;
     let last = 0;
     let max = 0;
-    window.addEventListener('devicemotion', function (e) {
+    registerDeviceMotionEvent(function (e) {
         let current_time = audioCtx.currentTime;
         let val = e.acceleration.x;
         if (Math.abs(val) > 15 && (last_trigger + rate_limit < current_time)) {
@@ -76,11 +76,10 @@ function initializeMotionSensing(callback: (is_right: boolean, strength: number)
 
 async function onload() {
     const {
-        tenis_01,
-        tenis_02,
-        tenis_03,
-        tenis_04,
-        tenis_05,
+        tennis_02,
+        tennis_03,
+        tennis_04,
+        tennis_05,
         meh_01,
         bounce,
         swoosh,
@@ -158,19 +157,19 @@ async function onload() {
             }
 
             // we hit the ball
-            tenis_05.start(0, {x: is_right ? 1 : -1});
+            tennis_05.start(0, {x: is_right ? 1 : -1});
             await sleep(air_time);
 
             // the other player
-            tenis_02.start(0, {x: (is_right ? 3 : -3) + (other_player_right ? 4 : -4), z: 7, y: -2})
+            tennis_02.start(0, {x: (is_right ? 3 : -3) + (other_player_right ? 4 : -4), z: 7, y: -2})
             await sleep(bounce_time);
             // bounce on the other players side
-            tenis_03.panner.positionZ.value = 10;
-            tenis_03.start(0, { x: other_player_right ? 5 : -5, z: 10, y: 5})
+            tennis_03.panner.positionZ.value = 10;
+            tennis_03.start(0, {x: other_player_right ? 5 : -5, z: 10, y: 5})
 
             // the ball bounces on our side
             await sleep(air_time)
-            tenis_04.start(0, {x: other_player_right ? 1 : -1, z: 2, y: -2})
+            tennis_04.start(0, {x: other_player_right ? 1 : -1, z: 2, y: -2})
         }
 
         initializeMotionSensing(batHit)
@@ -187,4 +186,3 @@ async function onload() {
 }
 
 onload();
-
