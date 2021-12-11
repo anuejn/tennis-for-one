@@ -19,3 +19,7 @@ export function registerDeviceMotionEvent(listener: (e: DeviceMotionEvent) => vo
         alert("DeviceMotionEvent is not defined");
     }
 }
+
+export function pickRandom<T>(list: T[]): T {
+    return list[Math.round(Math.random() * (list.length - 1))]
+}
