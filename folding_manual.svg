@@ -26,11 +26,11 @@
      showgrid="false"
      showborder="true"
      inkscape:showpageshadow="false"
-     inkscape:zoom="5.1241863"
-     inkscape:cx="216.42461"
-     inkscape:cy="107.13896"
-     inkscape:window-width="2560"
-     inkscape:window-height="1371"
+     inkscape:zoom="1.8116734"
+     inkscape:cx="152.89731"
+     inkscape:cy="178.56419"
+     inkscape:window-width="1920"
+     inkscape:window-height="1211"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -54,15 +54,25 @@
          y="25.385246">soundball</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="38.892666"
-       y="95.781471"
+       style="font-style:normal;font-weight:normal;font-size:6.164px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1541"
+       x="17.318604"
+       y="44.534374"
        id="text5472"><tspan
          sodipodi:role="line"
          id="tspan5470"
-         style="stroke-width:0.264583"
-         x="38.892666"
-         y="95.781471">imagine you are playing tennis</tspan></text>
+         style="stroke-width:0.1541"
+         x="17.318604"
+         y="44.534374">Rules:</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.1541"
+         x="17.318604"
+         y="52.239376"
+         id="tspan48529">* Close Your eyes. Imagine you are standing at the tennis court</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.1541"
+         x="17.318604"
+         y="59.944374"
+         id="tspan46685">* You Serve _always_</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -717,5 +727,21 @@ ux+Ruduj69H1iFj/CZIhGegiAlvYAAAAAElFTkSuQmCC
        id="image46412"
        x="27.531656"
        y="16.56806" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="42.364262"
+       y="43.257774"
+       id="text46691"><tspan
+         sodipodi:role="line"
+         id="tspan46689"
+         style="stroke-width:0.264583"
+         x="42.364262"
+         y="43.257774"></tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         id="tspan46693"
+         x="42.364262"
+         y="56.4869" /></text>
   </g>
 </svg>

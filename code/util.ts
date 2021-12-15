@@ -16,7 +16,7 @@ export function registerDeviceMotionEvent(listener: (e: DeviceMotionEvent) => vo
     } else if (typeof (DeviceMotionEvent) !== "undefined") {
         window.addEventListener("devicemotion", listener)
     } else {
-        alert("DeviceMotionEvent is not defined");
+        console.warn("DeviceMotionEvent is not defined");
     }
 }
 
