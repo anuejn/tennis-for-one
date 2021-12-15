@@ -30,7 +30,7 @@ export class PreloadedSoundPlayer {
         this.source.connect(this.gain);
     }
 
-    start(options: { gain?: number, x?: number, y?: number, z?: number, loop?: boolean, start?: number, offset?: number, duration?: number } = {}) {
+    start(options: { gain?: number, x?: number, y?: number, z?: number, loop?: boolean, start?: number, offset?: number, duration?: number } = {}): Promise<void> {
         const start = options.start || audioCtx.currentTime;
         const {gain = 1.0, x = 0, y = 0, z = 0, loop = false, offset = 0, duration} = options;
         this.panner.positionX.value = x;
@@ -42,8 +42,11 @@ export class PreloadedSoundPlayer {
         if (duration) {
             this.source.stop(start + duration)
         }
-        setTimeout(() => {
-            this.preload()
-        }, duration * 1000)
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                this.preload()
+                resolve()
+            }, (start + duration - offset) * 1000)
+        })
     }
 }

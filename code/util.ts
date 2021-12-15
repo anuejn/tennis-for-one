@@ -1,4 +1,5 @@
 export function sleep(seconds: number): Promise<void> {
+    console.log("sleeping", seconds)
     return new Promise((resolve, reject) => {
         setTimeout(() => resolve(), seconds * 1000)
     })
