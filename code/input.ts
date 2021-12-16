@@ -1,5 +1,5 @@
 import {audioCtx} from "./audio";
-import {registerDeviceMotionEvent} from "./util";
+import {isIos, registerDeviceMotionEvent} from "./util";
 
 type Callback = (is_right: boolean, strength: number) => void;
 type Unregister = () => void;
@@ -54,8 +54,10 @@ export function initializeMotionSensing(): void {
 
     registerDeviceMotionEvent(function (e) {
         let current_time = audioCtx.currentTime;
-        let val = e.acceleration.x;
-        if (Math.abs(val) > 15 && (last_trigger + rate_limit < current_time)) {
+        let val = e.acceleration.x - e.acceleration.z;
+
+
+        if (Math.abs(val) > 20 && (last_trigger + rate_limit < current_time)) {
             triggered = true;
             last_trigger = current_time;
         }
@@ -65,7 +67,8 @@ export function initializeMotionSensing(): void {
             max = Math.abs(val);
         }
         if (triggered && !grow) {
-            callbacks.forEach(callback => callback(false, 1))
+            document.getElementById("log").innerHTML += `${e.acceleration.z} ${e.acceleration.x} ${val}<br>`;
+            callbacks.forEach(callback => callback(val * (isIos() ? 1 : -1) > 0, 1))
             triggered = false;
             max = 0;
         }
