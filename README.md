@@ -1,6 +1,9 @@
 # Tennis For One
 A small audio-only game about the sound of playing tennis
 
+Done as a two week project for a games workshop at my university with Prof. Auriea Harvey and Tobias Zagres.
+This includes a also a small print addon (see [tennis-for-one.pdf](tennis_for_one.pdf)) that was the thing I handed in.
+
 ## Play It
 1. Point your phone to https://anuejn.github.io/tennis-for-one
 2. Plug in your headphones and wear them
