@@ -36,7 +36,7 @@ async function onload() {
         initializeMotionSensing()
 
         // create some ambience
-        pick(sounds.noise).start({loop: true, gain: 0.004})
+        pick(sounds.noise).start({loop: true, gain: 0.005})
         async function play_wildlife() {
             const birds = pick(sounds.birds);
 
@@ -82,7 +82,7 @@ async function onload() {
 
             await pick(sounds.tennis.bounce_failed).start({gain: 2, z: -5});
             await sleep(0.2);
-            await pick(sounds.player.negative).start({gain: 0.7});
+            await pick(sounds.player.negative).start({gain: 0.6});
             await sleep(0.5);
             computer_points += 1;
             document.getElementById("game_counter").innerText = `${player_points}:${computer_points}`
@@ -198,7 +198,7 @@ async function onload() {
                 in_a_row = 0;
                 document.getElementById("game_counter").innerText = `${player_points}:${computer_points}`
                 await sleep(1)
-                pick(sounds.player.positive).start({gain: 0.8})
+                pick(sounds.player.positive).start({gain: 0.6})
                 if (player_points > 2) {
                     await sleep(0.5)
                     narrator_player = story[story_progress];
