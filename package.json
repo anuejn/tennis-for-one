@@ -1,7 +1,7 @@
 {
-  "name": "soundball",
+  "name": "tennis_for_one",
   "version": "1.0.0",
-  "description": "A game with sound and motion",
+  "description": "A game about the sound of playing tennis",
   "main": "index.js",
   "browserslist": [
     "last 10 Firefox versions"

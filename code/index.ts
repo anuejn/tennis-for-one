@@ -203,7 +203,7 @@ async function onload() {
                     await sleep(0.5)
                     narrator_player = story[story_progress];
                     story_progress += 1;
-                    narrator_player.start({gain: 1.5, narrator_pos})
+                    narrator_player.start({gain: 1.5, ...narrator_pos})
                 }
                 continue
             }
