@@ -2,7 +2,7 @@
 A small audio-only game about the sound of playing tennis
 
 ## Play It
-1. Point your phone to https://files.niemo.de/soundball
+1. Point your phone to https://anuejn.github.io/tennis-for-one
 2. Plug in your headphones and wear them
 3. Press "START GAME"
 4. Close Your eyes. Imagine you are standing at the tennis court 
