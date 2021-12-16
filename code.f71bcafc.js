@@ -372,6 +372,14 @@ module.exports = "hihi.b868ef2c.mp3";
 module.exports = "nice_try.24c345c2.mp3";
 },{}],"TheV":[function(require,module,exports) {
 module.exports = "zack.3db210fa.mp3";
+},{}],"PueZ":[function(require,module,exports) {
+module.exports = "01.b422149c.mp3";
+},{}],"pcRr":[function(require,module,exports) {
+module.exports = "02.cb40ef6f.mp3";
+},{}],"hsRv":[function(require,module,exports) {
+module.exports = "03.fe4f73ce.mp3";
+},{}],"vEIj":[function(require,module,exports) {
+module.exports = "04.8b28d9a4.mp3";
 },{}],"ztQ7":[function(require,module,exports) {
 module.exports = "bounce_failed.29878e09.mp3";
 },{}],"mgaI":[function(require,module,exports) {
@@ -552,6 +560,12 @@ module.exports = {
       "yes": require("./../player/positive/yes.mp3")
     }
   },
+  "ruhe": {
+    "01": require("./../ruhe/01.mp3"),
+    "02": require("./../ruhe/02.mp3"),
+    "03": require("./../ruhe/03.mp3"),
+    "04": require("./../ruhe/04.mp3")
+  },
   "tennis": {
     "bounce_failed": require("./../tennis/bounce_failed.mp3"),
     "swoosh": require("./../tennis/swoosh.mp3"),
@@ -568,7 +582,7 @@ module.exports = {
     }
   }
 };
-},{"./../birds.mp3":"iYCt","./../noise.mp3":"NSaf","./../dev/intro_01.mp3":"YCqJ","./../dev/intro_02.mp3":"kqvr","./../dev/intro_03.mp3":"Rcgb","./../dev/intro_04.mp3":"CtPF","./../dev/meh_01.mp3":"tSbo","./../dev/meh_02.mp3":"lj8J","./../dev/wirds_bald.mp3":"Anjc","./../player/dududududu.mp3":"OH6U","./../player/hep.mp3":"wB39","./../player/hep_02.mp3":"tSMc","./../player/hihi.mp3":"LZwr","./../player/nice_try.mp3":"sg76","./../player/zack.mp3":"TheV","./../tennis/bounce_failed.mp3":"ztQ7","./../tennis/swoosh.mp3":"mgaI","./../dev/hep/hep_01.mp3":"DaMF","./../dev/hep/hep_02.mp3":"pRFH","./../dev/hep/hep_03.mp3":"TNVY","./../dev/hep/hep_04.mp3":"Clh6","./../dev/hep/hep_05.mp3":"vlLP","./../dev/huh/huh_01.mp3":"vHfI","./../dev/huh/huh_02.mp3":"Aa6l","./../dev/huh/huh_03.mp3":"umVX","./../dev/huh/huh_05.mp3":"uwm2","./../dev/huh/huh_06.mp3":"HzcU","./../dev/huh/huh_08.mp3":"siti","./../dev/negative/01.mp3":"DnQ4","./../dev/negative/02.mp3":"m1Qf","./../dev/negative/03.mp3":"T6AT","./../dev/negative/04.mp3":"nDOK","./../dev/negative/05.mp3":"eDLg","./../dev/story/01.mp3":"dzpF","./../dev/story/02.mp3":"atmj","./../dev/story/03.mp3":"BCXP","./../dev/story/04.mp3":"vIfm","./../dev/story/05.mp3":"t8EY","./../dev/story/06.mp3":"rdXJ","./../dev/story/07.mp3":"ppPY","./../dev/story/08.mp3":"tR6o","./../dev/story/09.mp3":"TzGC","./../dev/story/10.mp3":"GbEW","./../dev/story/11.mp3":"D7dt","./../dev/story/12.mp3":"DBPW","./../dev/story/13.mp3":"K2oI","./../dev/story/14.mp3":"RH37","./../dev/story/15.mp3":"hVob","./../dev/story/16.mp3":"t7Vw","./../player/negative/mmh.mp3":"fmvI","./../player/negative/mmpf.mp3":"kGaA","./../player/negative/mpf.mp3":"W6xc","./../player/negative/noah.mp3":"KzRq","./../player/negative/och_noe.mp3":"wg4A","./../player/negative/pff.mp3":"JVKJ","./../player/negative/uff.mp3":"oSUV","./../player/positive/aujeah.mp3":"bxcE","./../player/positive/hihi.mp3":"v4ab","./../player/positive/jawollja.mp3":"XIZ9","./../player/positive/yes.mp3":"dz9J","./../tennis/bat/tennis_bat_01.mp3":"fBN3","./../tennis/bat/tennis_bat_02.mp3":"gX5f","./../tennis/ground_bounce/tennis_01.mp3":"v9PN","./../tennis/ground_bounce/tennis_02.mp3":"mZe5","./../tennis/ground_bounce/tennis_03.mp3":"fg7d","./../tennis/ground_bounce/tennis_04.mp3":"ksP7","./../tennis/ground_bounce/tennis_05.mp3":"UOuO"}],"QCba":[function(require,module,exports) {
+},{"./../birds.mp3":"iYCt","./../noise.mp3":"NSaf","./../dev/intro_01.mp3":"YCqJ","./../dev/intro_02.mp3":"kqvr","./../dev/intro_03.mp3":"Rcgb","./../dev/intro_04.mp3":"CtPF","./../dev/meh_01.mp3":"tSbo","./../dev/meh_02.mp3":"lj8J","./../dev/wirds_bald.mp3":"Anjc","./../player/dududududu.mp3":"OH6U","./../player/hep.mp3":"wB39","./../player/hep_02.mp3":"tSMc","./../player/hihi.mp3":"LZwr","./../player/nice_try.mp3":"sg76","./../player/zack.mp3":"TheV","./../ruhe/01.mp3":"PueZ","./../ruhe/02.mp3":"pcRr","./../ruhe/03.mp3":"hsRv","./../ruhe/04.mp3":"vEIj","./../tennis/bounce_failed.mp3":"ztQ7","./../tennis/swoosh.mp3":"mgaI","./../dev/hep/hep_01.mp3":"DaMF","./../dev/hep/hep_02.mp3":"pRFH","./../dev/hep/hep_03.mp3":"TNVY","./../dev/hep/hep_04.mp3":"Clh6","./../dev/hep/hep_05.mp3":"vlLP","./../dev/huh/huh_01.mp3":"vHfI","./../dev/huh/huh_02.mp3":"Aa6l","./../dev/huh/huh_03.mp3":"umVX","./../dev/huh/huh_05.mp3":"uwm2","./../dev/huh/huh_06.mp3":"HzcU","./../dev/huh/huh_08.mp3":"siti","./../dev/negative/01.mp3":"DnQ4","./../dev/negative/02.mp3":"m1Qf","./../dev/negative/03.mp3":"T6AT","./../dev/negative/04.mp3":"nDOK","./../dev/negative/05.mp3":"eDLg","./../dev/story/01.mp3":"dzpF","./../dev/story/02.mp3":"atmj","./../dev/story/03.mp3":"BCXP","./../dev/story/04.mp3":"vIfm","./../dev/story/05.mp3":"t8EY","./../dev/story/06.mp3":"rdXJ","./../dev/story/07.mp3":"ppPY","./../dev/story/08.mp3":"tR6o","./../dev/story/09.mp3":"TzGC","./../dev/story/10.mp3":"GbEW","./../dev/story/11.mp3":"D7dt","./../dev/story/12.mp3":"DBPW","./../dev/story/13.mp3":"K2oI","./../dev/story/14.mp3":"RH37","./../dev/story/15.mp3":"hVob","./../dev/story/16.mp3":"t7Vw","./../player/negative/mmh.mp3":"fmvI","./../player/negative/mmpf.mp3":"kGaA","./../player/negative/mpf.mp3":"W6xc","./../player/negative/noah.mp3":"KzRq","./../player/negative/och_noe.mp3":"wg4A","./../player/negative/pff.mp3":"JVKJ","./../player/negative/uff.mp3":"oSUV","./../player/positive/aujeah.mp3":"bxcE","./../player/positive/hihi.mp3":"v4ab","./../player/positive/jawollja.mp3":"XIZ9","./../player/positive/yes.mp3":"dz9J","./../tennis/bat/tennis_bat_01.mp3":"fBN3","./../tennis/bat/tennis_bat_02.mp3":"gX5f","./../tennis/ground_bounce/tennis_01.mp3":"v9PN","./../tennis/ground_bounce/tennis_02.mp3":"mZe5","./../tennis/ground_bounce/tennis_03.mp3":"fg7d","./../tennis/ground_bounce/tennis_04.mp3":"ksP7","./../tennis/ground_bounce/tennis_05.mp3":"UOuO"}],"QCba":[function(require,module,exports) {
 "use strict";
 
 var _util = require("./util");
@@ -611,7 +625,7 @@ async function onload() {
 
     pick(sounds.noise).start({
       loop: true,
-      gain: 0.004
+      gain: 0.005
     });
 
     async function play_wildlife() {
@@ -635,7 +649,19 @@ async function onload() {
       setTimeout(play_wildlife, Math.random() * 5000);
     }
 
-    play_wildlife(); // initialize state for the main game loop
+    play_wildlife();
+
+    async function play_ruhe() {
+      await pick(sounds.ruhe).start({
+        x: -1,
+        y: 7,
+        z: 2,
+        gain: 4
+      });
+      setTimeout(play_ruhe, (Math.random() * 300 + 60) * 1000);
+    }
+
+    setTimeout(play_ruhe, (Math.random() * 60 + 45) * 1000); // initialize state for the main game loop
 
     let last_target = null;
     let in_a_row = 0;
@@ -645,7 +671,8 @@ async function onload() {
     let narrator_pos = {
       z: 7,
       x: -1,
-      y: 0
+      y: 0,
+      gain: 1.5
     };
     let story = Object.entries(sounds.dev.story).sort((a, b) => parseInt(a[0]) - parseInt(b[0])).map(x => x[1]);
     let story_progress = 0;
@@ -660,7 +687,7 @@ async function onload() {
       });
       await (0, _util.sleep)(0.2);
       await pick(sounds.player.negative).start({
-        gain: 0.7
+        gain: 0.6
       });
       await (0, _util.sleep)(0.5);
       computer_points += 1;
@@ -743,19 +770,30 @@ async function onload() {
       console.log("hit", is_right, timing);
       const interpolate_options = {
         input_min: 0,
-        input_max: 7,
+        input_max: 10,
         output_min: 0
       };
-      const air_time = 0.9 / (1 + in_a_row / 30) - Math.random() * (0, _util.interpolate)(in_a_row, {
+      const speed = in_a_row + Math.max(0, player_points - computer_points) * 1.5;
+      const air_time = Math.max(0.3, 0.9 / (1 + speed / 20) - Math.random() * (0, _util.interpolate)(speed, {
+        output_max: 0.3,
+        ...interpolate_options
+      }) + timing * (0, _util.interpolate)(player_points - computer_points, {
+        input_min: 0,
+        input_max: 15,
+        output_min: 0.7,
+        output_max: 1.5
+      }));
+      const bounce_time = 0.5 / (1 + speed / 30) - Math.random() * (0, _util.interpolate)(speed, {
         output_max: 0.2,
         ...interpolate_options
-      }) + timing;
-      const bounce_time = 0.5 / (1 + in_a_row / 30) - Math.random() * (0, _util.interpolate)(in_a_row, {
-        output_max: 0.15,
-        ...interpolate_options
+      }) + timing * (0, _util.interpolate)(player_points - computer_points, {
+        input_min: 0,
+        input_max: 15,
+        output_min: 0.3,
+        output_max: 0.7
       });
-      const my_air_time = air_time;
-      const my_bounce_time = bounce_time; // we hit the ball
+      const player_air_time = air_time;
+      const player_bounce_time = bounce_time; // we hit the ball
 
       pick(sounds.tennis.bat).start({
         x: is_right ? 1 : -1
@@ -765,19 +803,20 @@ async function onload() {
       narrator_pos = {
         x: other_player_right ? 10 : -10,
         z: 10,
-        y: 5
+        y: 5,
+        gain: 1.5
       };
       const end_time = _audio.audioCtx.currentTime + air_time + bounce_time;
       narrator_player.panner.positionX.linearRampToValueAtTime(narrator_pos.x, end_time);
       narrator_player.panner.positionY.linearRampToValueAtTime(narrator_pos.y, end_time);
       narrator_player.panner.positionZ.linearRampToValueAtTime(narrator_pos.z, end_time);
-      narrator_player.gain.gain.exponentialRampToValueAtTime(2, end_time - 0.1);
+      narrator_player.gain.gain.exponentialRampToValueAtTime(3, end_time - 0.1);
       await (0, _util.sleep)(air_time);
       const threshold = (0, _util.interpolate)(player_points - computer_points, {
         input_min: 0,
-        input_max: 12,
+        input_max: 14,
         output_min: 0,
-        output_max: 0.2
+        output_max: 0.45
       });
       const other_player_miss = Math.random() + timing / 2 < .5 - threshold && in_a_row > 2;
 
@@ -803,15 +842,15 @@ async function onload() {
         document.getElementById("game_counter").innerText = `${player_points}:${computer_points}`;
         await (0, _util.sleep)(1);
         pick(sounds.player.positive).start({
-          gain: 0.8
+          gain: 0.4
         });
 
         if (player_points > 2) {
-          await (0, _util.sleep)(0.5);
           narrator_player = story[story_progress];
           story_progress += 1;
           narrator_player.start({
-            gain: 1.5,
+            start: _audio.audioCtx.currentTime + 1,
+            gain: 2,
             ...narrator_pos
           });
         }
@@ -820,7 +859,7 @@ async function onload() {
       }
 
       currentTime = _audio.audioCtx.currentTime;
-      let duration = bounce_time + my_air_time + my_bounce_time;
+      let duration = bounce_time + player_air_time + player_bounce_time;
       const target_time = currentTime + duration;
       last_target = {
         target_time,
@@ -846,9 +885,9 @@ async function onload() {
         gain: 1.2,
         ...narrator_pos
       });
-      narrator_player.gain.gain.exponentialRampToValueAtTime(1.5, end_time + 0.1); // the ball bounces on our side
+      narrator_player.gain.gain.exponentialRampToValueAtTime(2, end_time + 0.1); // the ball bounces on our side
 
-      await (0, _util.sleep)(my_air_time);
+      await (0, _util.sleep)(player_air_time);
       console.log("bounce_me");
       pick(sounds.tennis.ground_bounce).start({
         gain: 1.2,
@@ -870,4 +909,4 @@ async function onload() {
 
 onload();
 },{"./util":"BHXf","./audio":"omPi","./input":"QnDB","../sounds/**/*.mp3":"MhuC"}]},{},["QCba"], null)
-//# sourceMappingURL=code.582c34de.js.map
+//# sourceMappingURL=code.f71bcafc.js.map
