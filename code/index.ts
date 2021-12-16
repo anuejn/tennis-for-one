@@ -4,8 +4,11 @@ import {asyncBatHit, asyncBatHitTimeout, initializeMotionSensing, registerCallba
 
 import soundDir from "../sounds/**/*.mp3"
 
-interface Directory extends Record<string, string | Directory> {}
-interface LoadedDirectory extends Record<string, PreloadedSoundPlayer & LoadedDirectory> {}
+interface Directory extends Record<string, string | Directory> {
+}
+
+interface LoadedDirectory extends Record<string, PreloadedSoundPlayer & LoadedDirectory> {
+}
 
 async function loadSounds(dir: Directory): Promise<LoadedDirectory> {
     return Object.fromEntries(await Promise.all(Object.entries(dir).map(async ([name, dir]) => {
@@ -37,6 +40,7 @@ async function onload() {
 
         // create some ambience
         pick(sounds.noise).start({loop: true, gain: 0.005})
+
         async function play_wildlife() {
             const birds = pick(sounds.birds);
 
@@ -59,7 +63,15 @@ async function onload() {
 
             setTimeout(play_wildlife, Math.random() * 5000)
         }
+
         play_wildlife()
+
+        async function play_ruhe() {
+            await pick(sounds.ruhe).start({x: -1, y: 7, z: 2, gain: 4})
+            setTimeout(play_ruhe, (Math.random() * 300 + 60) * 1000)
+        }
+
+        setTimeout(play_ruhe, (Math.random() * 60 + 45) * 1000)
 
         // initialize state for the main game loop
         let last_target = null as null | {
@@ -71,7 +83,7 @@ async function onload() {
         let computer_points = 0;
         let remind_to_play = true;
 
-        let narrator_pos = {z: 7, x: -1, y: 0};
+        let narrator_pos = {z: 7, x: -1, y: 0, gain: 1.5};
         let story = Object.entries(sounds.dev.story).sort((a, b) => parseInt(a[0]) - parseInt(b[0])).map(x => x[1]);
         let story_progress = 0;
         let narrator_player: PreloadedSoundPlayer = story[0];
@@ -156,13 +168,30 @@ async function onload() {
 
             const interpolate_options = {
                 input_min: 0,
-                input_max: 7,
+                input_max: 10,
                 output_min: 0,
             }
-            const air_time = ((0.9 / (1 + (in_a_row / 30))) - Math.random() * interpolate(in_a_row, {output_max: 0.2, ...interpolate_options})) + timing;
-            const bounce_time = 0.5 / (1 + (in_a_row / 30)) - Math.random() * interpolate(in_a_row, {output_max: 0.15, ...interpolate_options});
-            const my_air_time = air_time;
-            const my_bounce_time = bounce_time;
+            const speed = in_a_row + Math.max(0, player_points - computer_points) * 1.5
+            const air_time = Math.max(
+                0.3, (0.9 / (1 + (speed / 20)))
+                - Math.random() * interpolate(speed, {output_max: 0.3, ...interpolate_options})
+                + timing * interpolate(player_points - computer_points, {
+                    input_min: 0,
+                    input_max: 15,
+                    output_min: 0.7,
+                    output_max: 1.5,
+                })
+            );
+            const bounce_time = 0.5 / (1 + (speed / 30))
+                - Math.random() * interpolate(speed, {output_max: 0.2, ...interpolate_options})
+                + timing * interpolate(player_points - computer_points, {
+                    input_min: 0,
+                    input_max: 15,
+                    output_min: 0.3,
+                    output_max: 0.7,
+                })
+            const player_air_time = air_time;
+            const player_bounce_time = bounce_time;
 
 
             // we hit the ball
@@ -170,22 +199,22 @@ async function onload() {
 
             // we move the narrator
             const other_player_right = Math.random() > (0.5 + (is_right ? 0.1 : -0.1));
-            narrator_pos = {x: other_player_right ? 10 : -10, z: 10, y: 5}
+            narrator_pos = {x: other_player_right ? 10 : -10, z: 10, y: 5, gain: 1.5}
             const end_time = audioCtx.currentTime + air_time + bounce_time;
             narrator_player.panner.positionX.linearRampToValueAtTime(narrator_pos.x, end_time)
             narrator_player.panner.positionY.linearRampToValueAtTime(narrator_pos.y, end_time)
             narrator_player.panner.positionZ.linearRampToValueAtTime(narrator_pos.z, end_time)
-            narrator_player.gain.gain.exponentialRampToValueAtTime(2, end_time - 0.1)
+            narrator_player.gain.gain.exponentialRampToValueAtTime(3, end_time - 0.1)
 
             await sleep(air_time);
 
             const threshold = interpolate(player_points - computer_points, {
                 input_min: 0,
-                input_max: 12,
+                input_max: 14,
                 output_min: 0,
-                output_max: 0.2
+                output_max: 0.45
             })
-            const other_player_miss = (Math.random() + (timing / 2) <.5 - threshold) && in_a_row > 2;
+            const other_player_miss = (Math.random() + (timing / 2) < .5 - threshold) && in_a_row > 2;
             if (other_player_miss) {
                 // the other players bounce
                 console.log("bounce_other")
@@ -198,18 +227,17 @@ async function onload() {
                 in_a_row = 0;
                 document.getElementById("game_counter").innerText = `${player_points}:${computer_points}`
                 await sleep(1)
-                pick(sounds.player.positive).start({gain: 0.6})
+                pick(sounds.player.positive).start({gain: 0.4})
                 if (player_points > 2) {
-                    await sleep(0.5)
                     narrator_player = story[story_progress];
                     story_progress += 1;
-                    narrator_player.start({gain: 1.5, ...narrator_pos})
+                    narrator_player.start({start: audioCtx.currentTime + 1, gain: 2, ...narrator_pos})
                 }
                 continue
             }
 
             currentTime = audioCtx.currentTime;
-            let duration = bounce_time + my_air_time + my_bounce_time;
+            let duration = bounce_time + player_air_time + player_bounce_time;
             const target_time = currentTime + duration;
             last_target = {
                 target_time,
@@ -218,7 +246,12 @@ async function onload() {
 
             // the other players bounce
             console.log("bounce_other")
-            pick(sounds.tennis.ground_bounce).start({gain: 1.2, x: (is_right && other_player_right ? 2 : -2) + (other_player_right ? 1 : -1), z: 7, y: -2})
+            pick(sounds.tennis.ground_bounce).start({
+                gain: 1.2,
+                x: (is_right && other_player_right ? 2 : -2) + (other_player_right ? 1 : -1),
+                z: 7,
+                y: -2
+            })
             await sleep(bounce_time);
             // the other players bat
             console.log("bat_other")
@@ -226,10 +259,10 @@ async function onload() {
                 pick(sounds.dev.huh).start(narrator_pos)
             }
             pick(sounds.tennis.bat).start({gain: 1.2, ...narrator_pos})
-            narrator_player.gain.gain.exponentialRampToValueAtTime(1.5, end_time + 0.1)
+            narrator_player.gain.gain.exponentialRampToValueAtTime(2, end_time + 0.1)
 
             // the ball bounces on our side
-            await sleep(my_air_time)
+            await sleep(player_air_time)
             console.log("bounce_me")
             pick(sounds.tennis.ground_bounce).start({gain: 1.2, x: other_player_right ? 1.5 : -1.5, z: 1.5, y: -2})
         }
