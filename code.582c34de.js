@@ -862,8 +862,12 @@ async function onload() {
   const start = document.getElementById("start");
   start.addEventListener("mousedown", startGame);
   start.innerText = "START GAME";
+
+  if (/Android/i.test(navigator.userAgent)) {
+    alert("sorry, android phones might not work really well :(");
+  }
 }
 
 onload();
 },{"./util":"BHXf","./audio":"omPi","./input":"QnDB","../sounds/**/*.mp3":"MhuC"}]},{},["QCba"], null)
-//# sourceMappingURL=code.d3e7aa3e.js.map
+//# sourceMappingURL=code.582c34de.js.map
